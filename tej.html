@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FORMS</title>
+</head>
+<body>
+<form style="text-align: center; background-color: bisque; width: 30%; border:1px solid black;margin-top: 20px;">
+	<label>Name:</label>
+	<input type="text" name="" id="name1"><br><br>
+	<label>
+		Mail:
+	</label>
+	<input type="text" name="" id="mail1"><br><br>
+	<label>Mobile</label>
+	<input type="text" name="" id="mobile1"><br><br>
+	<input type="button" name="" value="submit" onclick="create1()">
+</form>
+<script type="text/javascript">
+function create1(){
+    var n=document.getElementById("name1").value;
+    var ma=document.getElementById("mail1").value;
+    var mo=document.getElementById("mobile1").value;
+	var div=document.createElement("div");
+	div.style.width="300px";
+	div.style.height="100px";
+	div.style.cssFloat="left";
+	div.style.marginLeft="20px";
+	div.style.marginTop="20px";
+	div.style.border="1px solid black";
+
+	div.style.backgroundColor="bisque";
+	var ulEl=document.createElement("ul");
+	var Name=document.createElement("label");
+	var Mail=document.createElement("label");
+	var Mobile=document.createElement("label");
+	var img=document.createElement("IMG");
+	var c=document.createElement("close");
+	
+	c.innerHTML="X";
+	c.addEventListener("click",closed);
+	
+	c.style.cssFloat="right";
+	img.setAttribute("src","benz.jpg");
+	img.style.width="100px";
+	img.style.height="100px";
+	img.style.cssFloat="right";
+
+	Name.innerHTML="UserName:"+n;
+	Mail.innerHTML="Email:"+ma;
+	Mobile.innerHTML="Mobile:"+mo;
+	var p1=document.createElement("p");
+	var p2=document.createElement("p");
+	var p3=document.createElement("p");
+	Name.appendChild(p1);
+	Mail.appendChild(p2);
+	Mobile.appendChild(p3);
+	ulEl.appendChild(Name);
+	ulEl.appendChild(Mail);
+	ulEl.appendChild(Mobile);
+	div.appendChild(img);
+	div.appendChild(c);
+	div.appendChild(ulEl);
+	document.body.appendChild(div);
+	function closed()
+	{
+		div.style.display="none";
+	}
+}
+	
+</script>
+</body>
+</html>
